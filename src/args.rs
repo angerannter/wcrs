@@ -21,7 +21,11 @@ pub struct Args {
     #[arg(short, long, default_value_t = true)]
     pub words: bool,
 
+    /// Read contents of files all at once instead of buffering (RAM intensive)
+    #[arg(short, long, default_value_t = false)]
+    pub unbuffered: bool,
+
     /// Files to be counted
-    #[arg(short, long, default_value = "resources/test.txt")]
+    #[arg(short, long, default_value = ".")]
     pub files: PathBuf
 }
