@@ -22,6 +22,6 @@ pub struct Args {
     pub words: bool,
 
     /// Files to be counted
-    #[arg(short, long, default_value = "-")]
+    #[arg(short, long, default_value = "resources/test.txt")]
     pub files: PathBuf
 }
