@@ -1,7 +1,7 @@
 use std::path::PathBuf;
 use clap::Parser;
 
-/// Rust implementation of wc
+/// Rust implementation of wc, pass either a file or directory
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
 pub struct Args {
@@ -21,11 +21,11 @@ pub struct Args {
     #[arg(short, long, default_value_t = true)]
     pub words: bool,
 
-    /// Buffered read of target file(s), may be slower but less RAM intensive
+    /// Buffered read of target file(s); may be slower but less RAM intensive
     #[arg(short = 'B', long, default_value_t = false)]
     pub buffered_read: bool,
 
-    /// Files to be counted
+    /// File(s) to be counted
     #[arg(short, long, default_value = ".")]
     pub files: PathBuf
 }
