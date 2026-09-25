@@ -25,11 +25,11 @@ fn main() {
 
 fn run(args: &Args) -> Result<OutputData, Box<dyn Error>> {
         if args.files.is_file() {
-            if args.unbuffered {
+            if !args.buffered_read {
                 return count_single_file_unbuffered(args);
             }
         } else {
-            if args.unbuffered {
+            if !args.buffered_read {
                 return count_files_unbuffered(args);
             }
         }
